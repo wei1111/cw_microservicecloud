@@ -10,6 +10,10 @@
     <modules>
         <module>cw_microservicecloud-api</module>
         <module>cw_microservicecloud-provider-dept-8001</module>
+        <module>cw_microservicecloud-consumer-dept-80</module>
+        <module>cw_microservicecloud-eureka-7001</module>
+        <module>cw_microservicecloud-eureka-7002</module>
+        <module>cw_microservicecloud-eureka-7003</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -72,4 +76,27 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <!--下面这个配置是用来完善eureka的注册为服务信息完善的，表示在src/main/resources文件夹下的以$开头和$结尾的是info-->
+        <finalName>cw_microservicecloud</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

@@ -4,6 +4,26 @@ server:
 logging:
   level:
     learning: trace
+    level:
+     com.chenwei.springcloud.dao: DEBUG
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+#      defaultZone: http://localhost:7001/eureka
+       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: cw_microservicecloud-dept8001
+    prefer-ip-address: true     #访问路径可以显示IP地址
+
+info:
+  author: 陈维
+  app.name: cw_microservicecloud
+  company.name: www.hellowei2.top
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+
 
 spring:
   application:
@@ -27,10 +47,23 @@ spring:
 #    suffix: .htm
 #    #后缀
 #    prefix: /htm/
-
 mybatis:
   #实体类所做包
   type-aliases-package: com.chenwei.springcloud.entities
   #mapper.xml所在位置
   mapper-locations: classpath:mybatis/mapper/**/*.xml
   config-location: classpath:mybatis/mybatis.cfg.xml            # mybatis配置文件所在路径
+
+
+
+  # spring boot集成mybatis的方式打印sql
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+
+#日志的方式打印sql
+#logging:
+#  level:
+#    com.chenwei.springcloud.dao: DEBUG
+#注意：com.seamax.bdsearch.dao = 你的mapper包。
