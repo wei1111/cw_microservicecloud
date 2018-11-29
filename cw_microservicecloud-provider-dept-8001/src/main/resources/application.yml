@@ -1,0 +1,36 @@
+server:
+  port: 8001
+
+logging:
+  level:
+    learning: trace
+
+spring:
+  application:
+    name: cw_microservicecloud-dept
+  #数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloudDB01
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    connectionProperties: druid.stat.mergeSql=true
+  #模板引擎
+  freemarker:
+    #关闭缓存
+    cache: false
+    request-context-attribute: request
+    #模板加载的位置
+    template-loader-path: classpath:/templates
+    #前缀
+#    suffix: .htm
+#    #后缀
+#    prefix: /htm/
+
+mybatis:
+  #实体类所做包
+  type-aliases-package: com.chenwei.springcloud.entities
+  #mapper.xml所在位置
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  config-location: classpath:mybatis/mybatis.cfg.xml            # mybatis配置文件所在路径
