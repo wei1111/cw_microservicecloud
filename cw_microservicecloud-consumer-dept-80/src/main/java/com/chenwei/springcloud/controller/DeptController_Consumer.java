@@ -19,7 +19,10 @@ public class DeptController_Consumer {
     @Autowired
     RestTemplate restTemplate;
 
-    private static final String REST_URL_PREFIX = "http://localhost:8001";
+//    private static final String REST_URL_PREFIX = "http://localhost:8001";
+    //这里就是体现微服务的地方了
+    private static final String REST_URL_PREFIX = "http://CW_MICROSERVICECLOUD-DEPT";
+
 
     /**
      * 使用 使用restTemplate访问restful接口非常的简单粗暴无脑。
