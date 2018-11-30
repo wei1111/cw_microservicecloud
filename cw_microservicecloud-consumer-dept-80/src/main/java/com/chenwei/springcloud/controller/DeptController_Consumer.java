@@ -19,8 +19,17 @@ public class DeptController_Consumer {
     @Autowired
     RestTemplate restTemplate;
 
-//    private static final String REST_URL_PREFIX = "http://localhost:8001";
-    //这里就是体现微服务的地方了
+
+    //    private static final String REST_URL_PREFIX = "http://localhost:8001";
+    //这里就是体现微服务的地方了 在配置RestTemplate 使用@LoadBalanced注解，使得可以直接使用MICROSERVICECLOUD-DEPT
+    // 当然也可以使用   下面这种方式拼接出服务提供者的url地址
+
+//    @Autowired
+//    LoadBalancerClient loadBalancerClient;
+//    ServiceInstance choose = loadBalancerClient.choose("MICROSERVICECLOUD-DEPT");
+//    String host = choose.getHost();
+//    int port = choose.getPort();
+
     private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
 
 
