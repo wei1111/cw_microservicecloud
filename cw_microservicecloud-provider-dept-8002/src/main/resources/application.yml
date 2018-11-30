@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 
 logging:
   level:
@@ -13,7 +13,7 @@ eureka:
 #      defaultZone: http://localhost:7001/eureka
        defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: cw_microservicecloud-dept8001 #自定义服务名称信息
+    instance-id: cw_microservicecloud-dept8002 #自定义服务名称信息
     prefer-ip-address: true     #访问路径可以显示IP地址
 
 info:
@@ -30,7 +30,7 @@ spring:
     name: microservicecloud-dept
   #数据源配置
   datasource:
-    url: jdbc:mysql://localhost:3306/cloudDB01
+    url: jdbc:mysql://localhost:3306/cloudDB02
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver

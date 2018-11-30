@@ -21,7 +21,7 @@ public class DeptController_Consumer {
 
 //    private static final String REST_URL_PREFIX = "http://localhost:8001";
     //这里就是体现微服务的地方了
-    private static final String REST_URL_PREFIX = "http://CW_MICROSERVICECLOUD-DEPT";
+    private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
 
 
     /**
